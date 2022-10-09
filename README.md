@@ -4,8 +4,7 @@
 
 
 ## Built with
-* Semantic HTML5 markup![Uploading Screen Shot 2022-10-08 at 6.42.27 PM.png…]()
-
+* Semantic HTML5 markup
 * CSS Flexbox
 * Mobile-first workflow
 * Vanilla JS
