@@ -1,69 +1,188 @@
-body {
-    background-color: #273549;
-    font-family: 'Inter', sans-serif;
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
-#container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 50px 100px;
+.next-line {
+    display: block;
 }
-
-h1{
-    color: #10B981;
-    font-weight: bold;
-    font-family: 'Karla', sans-serif;
-    font-size: 40px;
-    margin-bottom: 2px;
-}
-span {
+label {
     color: white;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.8em;
+    margin-top: -5px;
 }
-h2 {
-    color:  #939799;
-    font-size: 20px;
 
-}
+/* --------------------
+        COMPONENTS
+-------------------- */
+
 button {
-    background-color: 10B981;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    background-color: #10B981;
+}
+
+button:hover,
+button:active {
+    opacity: 0.8;
+}
+
+.length-cntrl{
+    height: 24px;
+    display: flex;
+}
+.length-cntrl > input{
+    height: 100%;
+    width: 3em;
+    text-align: center;
+    background: #273549;
+}
+.length-cntrl > input:focus{
+    background: rgba(0,0,0,0.1);
+
+}
+.length-cntrl > button {
+    padding: 0 12px;
+    font-weight: 500;
+}
+.length-cntrl > button#decrement {
+    border-radius: 12px 0 0 12px;
+}
+.length-cntrl > button#increment {
+    border-radius: 0 12px 12px 0;
+}
+
+#increment, #decrement {
+    color: #FFFFFF;
+}
+#generate {
     font-size: 16px;
-    width: 204px;
-    height: 50px;
+    width: 225px;
+    height: 43px;
     color: white;
-    border-radius: 10px;
-    margin-top: 40px;
+    border-radius: 7px;
+    padding: 12px 23px;
 }
 .password {
     background-color: #ffffff2b;
     width: 170px;
     height: 25px;
     border-radius: 10px;
-    margin-top: 17px;
-
-    padding: 15px 9px 7px;
     color: black;
     text-align: center;
-    color: #10B981;
     border: 1px solid black;
     font-size: 17px;
+    color: #55F991;
 }
 
+button, input{
+    font-size: 100%;
+    touch-action: manipulation;
+}
 
-@media only screen and (min-width: 600px) {
-    #container{
-        align-items: center;
-        margin: 200px 100px;
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin-top: 51px;
+    margin-bottom: 35px
+}
+/* --------------------
+        LAYOUT
+-------------------- */
+* {
+    box-sizing: border-box;
+    color: inherit;
+}
+
+body {
+    position: relative;
+    background-color: #1C1C1C;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#container{
+    width: 100%;
+    max-width: 600px;
+    padding: 118px 52px 46px 52px;
+    background: #1F2937;
+}
+
+body, h1, h2, button, ul, input {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+ul {
+    list-style-type: none;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+}
+
+h1{
+    font-family: 'Karla', sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    font-weight: 800;
+    /* margin-bottom: 18px; */
+    letter-spacing:  -1px;
+    line-height: 1;
+}
+.next-line {
+    color: #4ADF86;
+}
+
+@media (min-width: 480px) {
+
+    .controls{
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
-    #passwordContainer {
+    #passwordContainer{
+        border-top: 1px solid #2F3E53;
+        padding-top: 35px;
+        margin-top: 35px;
+    }
+    .password-list {
+        color: #55F991;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+        gap: 24px 27px;
+    }
+    .password-list > li, 
+    .password {
+        border-radius: 6px;
+    }
+    .password-list > li {
+        height: 40px;
+        background-image: (url('img/ellipsis.svg'));
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .password {
+        font-weight: 500;
+        width: 100%;
+        height: 100%;
         display: flex;
-        flex-direction: row;
         justify-content: center;
         align-items: center;
     }
-    .password {
-        margin-left: 20px;
-    }
+
   }
